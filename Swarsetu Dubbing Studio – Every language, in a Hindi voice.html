@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swarsetu Dubbing Studio – Every language, in a Hindi voice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f3ee;--bg2:#ece5dc;--card:#fff;--tx:#1b1830;--mu:#5e5a73;--ac:#d9480f;--ac2:#7048e8;--ln:#d9d0c4;--hero:#1b1830;--herotx:#f7f3ee;--onac:#fff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13112a;--bg2:#1a1736;--card:#211e42;--tx:#f3eefb;--mu:#a9a3c6;--ac:#ffb020;--ac2:#9d7bff;--ln:#322e5a;--hero:#0d0b20;--herotx:#f3eefb;--onac:#1b1830;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13112a;--bg2:#1a1736;--card:#211e42;--tx:#f3eefb;--mu:#a9a3c6;--ac:#ffb020;--ac2:#9d7bff;--ln:#322e5a;--hero:#0d0b20;--herotx:#f3eefb;--onac:#1b1830;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+body{background:var(--bg);color:var(--tx);font:400 17px/1.65 Figtree,system-ui,sans-serif;min-height:100%;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.12}
+h1{font-size:clamp(2.6rem,7vw,5rem)}h2{font-size:clamp(1.9rem,4.5vw,2.9rem);margin-bottom:.6rem}h3{font-size:1.45rem;margin-bottom:.3rem}
+p{color:var(--mu);max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ac2);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
+nav{max-width:1120px;margin:auto;display:flex;align-items:center;gap:6px;padding:10px 20px;flex-wrap:wrap}
+.logo{font-family:"DM Serif Display",serif;font-size:1.6rem;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
+.logo i{display:inline-flex;gap:2px;align-items:center;height:22px}.logo i b{width:3px;background:var(--ac);border-radius:2px;animation:wv 1.1s ease-in-out infinite}
+.logo i b:nth-child(1){height:8px}.logo i b:nth-child(2){height:18px;animation-delay:.15s}.logo i b:nth-child(3){height:12px;animation-delay:.3s}.logo i b:nth-child(4){height:20px;animation-delay:.45s}
+nav a.l{padding:6px 12px;border-radius:99px;text-decoration:none;font-size:.95rem;font-weight:600;color:var(--mu);transition:.2s}
+nav a.l:hover,nav a.l.on{background:var(--ac);color:var(--onac)}
+.btn{display:inline-block;padding:13px 26px;border-radius:99px;background:var(--ac);color:var(--onac);text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:700;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px -8px var(--ac)}
+.btn.g{background:transparent;color:inherit;border:2px solid currentColor}
+.pg{display:none}.pg.on{display:block;animation:in .6s ease both}
+.w{max-width:1120px;margin:auto;padding:72px 20px}
+.hero{background:var(--hero);color:var(--herotx);overflow:hidden}
+.hero p{color:color-mix(in srgb,var(--herotx) 75%,transparent)}
+.hero .w{padding:90px 20px 100px;display:grid;gap:26px}
+.say{font-family:"Tiro Devanagari Hindi","DM Serif Display",serif;font-size:clamp(1.3rem,3vw,1.8rem);height:2.2em;display:flex;align-items:center;gap:14px;color:var(--herotx)}
+.say span{display:inline-block;min-width:7ch;transition:opacity .35s,transform .35s}
+.say small{font:600 .85rem Figtree,sans-serif;color:var(--mu);border:1px solid currentColor;padding:1px 10px;border-radius:99px}
+.bars{display:flex;align-items:center;gap:4px;height:120px;margin-top:10px}
+.bars b{flex:1;max-width:9px;min-width:3px;border-radius:5px;background:linear-gradient(var(--ac),var(--ac2));height:20%;animation:wv 1.4s ease-in-out infinite}
+.row{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;border-top:1px solid var(--ln);padding-top:30px}
+.stats strong{font:400 2.4rem "DM Serif Display",serif;display:block;color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:30px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:18px;padding:26px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-5px);border-color:var(--ac)}
+.card .ic{font-size:1.8rem;display:block;margin-bottom:8px}
+.alt{background:var(--bg2)}
+.marq{overflow:hidden;border-block:1px solid var(--ln);background:var(--bg2)}
+.marq div{display:flex;gap:40px;width:max-content;padding:16px 0;animation:mq 38s linear infinite;font:400 1.5rem "Tiro Devanagari Hindi","DM Serif Display",serif;color:var(--mu)}
+.marq:hover div{animation-play-state:paused}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}
+.chip{padding:8px 18px;border-radius:99px;border:1.5px solid var(--ln);background:var(--card);color:var(--tx);cursor:pointer;font:600 .95rem Figtree,sans-serif;transition:.2s}
+.chip:hover{border-color:var(--ac)}.chip[aria-pressed=true]{background:var(--ac2);color:#fff;border-color:var(--ac2)}
+.demo{background:var(--card);border:1px solid var(--ln);border-radius:20px;padding:30px;display:grid;gap:18px;min-height:210px}
+.demo q{font-size:1.2rem;color:var(--mu);quotes:none;display:block}.demo .hi{font:400 1.7rem/1.4 "Tiro Devanagari Hindi",serif;color:var(--ac);animation:in .5s both}
+.steps{counter-reset:s;margin-top:30px;border-left:3px solid var(--ln);margin-left:14px;padding:0}
+.steps li{list-style:none;position:relative;padding:0 0 34px 34px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:-18px;top:0;width:33px;height:33px;border-radius:50%;background:var(--ac);color:var(--onac);display:grid;place-items:center;font-weight:700;font-size:.95rem}
+.play{display:flex;align-items:center;gap:14px}
+.pb{width:46px;height:46px;border-radius:50%;border:0;background:var(--ac);color:var(--onac);cursor:pointer;font-size:1rem;flex:none}
+.mini{display:flex;gap:3px;align-items:center;height:34px;flex:1}.mini b{width:4px;border-radius:3px;background:var(--ln);height:30%}
+.mini.go b{background:var(--ac2);animation:wv .9s ease-in-out infinite}
+.price{position:relative}.price.f{border:2px solid var(--ac)}
+.price .p{font:400 2.4rem "DM Serif Display",serif;color:var(--ac)}.price .p small{font:400 1rem Figtree;color:var(--mu)}
+.price ul{margin:14px 0 20px;padding-left:20px;color:var(--mu)}
+.tag{position:absolute;top:-13px;right:20px;background:var(--ac);color:var(--onac);padding:2px 14px;border-radius:99px;font-size:.85rem;font-weight:700}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:start}
+label{display:block;font-weight:600;margin:14px 0 4px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid var(--ln);background:var(--card);color:var(--tx);font:inherit}
+.ok{display:none;margin-top:16px;padding:14px;border-radius:12px;background:var(--bg2);border-left:4px solid var(--ac2);color:var(--tx)}
+footer{border-top:1px solid var(--ln);padding:34px 20px;text-align:center;color:var(--mu);font-size:.95rem}
+footer a{margin:0 8px}footer p{margin:10px auto}
+.air{display:inline-flex;align-items:center;gap:10px;padding:6px 16px;border-radius:8px;background:#c1121f;color:#fff;font-weight:700;letter-spacing:.08em;font-size:.85rem}.air i{width:10px;height:10px;border-radius:50%;background:#fff;animation:bl 1.2s infinite}
+.wf{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 16px}.wf .chip{border-radius:12px;padding:10px 16px}
+.pnl{background:var(--card);border:1px solid var(--ln);border-radius:20px;padding:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;animation:in .4s both}
+.pnl h3{font-size:1.8rem}.pnl dt{font-weight:700;font-size:.9rem;color:var(--ac);margin-top:12px}.pnl dd{margin:0;color:var(--mu)}
+.vu{display:flex;gap:3px;align-items:flex-end;height:56px;margin-top:16px}.vu b{width:8px;height:100%;border-radius:2px;background:linear-gradient(to top,#2f9e44 55%,#f59f00 80%,#e03131);transform-origin:bottom;animation:wv .7s ease-in-out infinite}
+.rm{display:grid;gap:6px}.rm .t{font:400 .9rem Figtree;color:var(--ac2);font-weight:700}
+.gear{columns:2 240px;gap:30px;margin-top:20px;padding-left:20px;color:var(--mu)}.gear li{margin-bottom:8px;break-inside:avoid}
+.day{display:grid;gap:0;margin-top:26px}.day div{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--ln)}.day b{color:var(--ac)}
+@keyframes bl{50%{opacity:.2}}
+@keyframes wv{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes mq{to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.v{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><nav aria-label="Main menu">
+ <a class="logo" href="#home"><i aria-hidden="true"><b></b><b></b><b></b><b></b></i>Swarsetu</a>
+ <a class="l" href="#home">Home</a><a class="l" href="#services">Services</a><a class="l" href="#languages">Languages</a><a class="l" href="#studio">Studio</a><a class="l" href="#process">Process</a><a class="l" href="#work">Samples</a><a class="l" href="#pricing">Pricing</a><a class="l" href="#about">About</a>
+ <a class="btn" style="padding:8px 20px" href="#contact">Contact us</a>
+</nav></header>
+
+<main>
+<section class="pg" id="home" data-t="Swarsetu Dubbing Studio – Every language, in a Hindi voice">
+ <div class="hero"><div class="w">
+  <div class="say" aria-hidden="true"><span id="sw">Hello</span><small id="sl">English</small></div>
+  <h1>Every story, heard<br>in Hindi.</h1>
+  <p>Swarsetu is a professional dubbing studio. We dub films, web series, anime, cartoons and courses from 40+ languages into Hindi, with voices that sound completely natural.</p>
+  <div class="row"><a class="btn" href="#contact">Get a free demo</a><a class="btn g" href="#work">Listen to samples</a></div>
+  <div class="bars" id="bars" aria-hidden="true"></div>
+ </div></div>
+ <div class="marq" aria-hidden="true"><div id="mq"></div></div>
+ <div class="w"><div class="stats rv"><div><strong>40+</strong>Source languages</div><div><strong>1,200+</strong>Projects dubbed</div><div><strong>150+</strong>Voice artists</div><div><strong>48 hrs</strong>To first draft</div></div></div>
+ <div class="alt"><div class="w">
+  <h2 class="rv">What sets us apart</h2><p class="rv">We don’t just translate words. We carry over emotion, humour and tone.</p>
+  <div class="grid">
+   <div class="card rv"><span class="ic">🎭</span><h3>Emotion-matched casting</h3><p>Every character gets a voice that fits their age, accent and mood.</p></div>
+   <div class="card rv"><span class="ic">👄</span><h3>Accurate lip-sync</h3><p>Scripts are adapted to match the actors’ mouth movements on screen.</p></div>
+   <div class="card rv"><span class="ic">🎚️</span><h3>Studio-grade sound</h3><p>Mixing, mastering and music handled, so you get fully finished audio.</p></div>
+  </div>
+ </div></div>
+ <div class="w" style="text-align:center"><h2 class="rv">Bring your project to Hindi audiences</h2><p class="rv" style="margin:0 auto 22px">Send us your file. Get a quote within 24 hours and a free demo clip.</p><a class="btn" href="#contact">Get started</a></div>
+</section>
+
+<section class="pg" id="services" data-t="Services – Swarsetu"><div class="w">
+ <h1>Our services</h1><p style="margin-top:12px">Different content needs different teams. Every service dubs into Hindi.</p>
+ <div class="grid">
+  <div class="card rv"><span class="ic">🎬</span><h3>Films and web series</h3><p>Multi-cast dubbing for OTT and theatrical releases.</p></div>
+  <div class="card rv"><span class="ic">🧸</span><h3>Anime and cartoons</h3><p>Lively, fun character voices for kids and fans.</p></div>
+  <div class="card rv"><span class="ic">▶️</span><h3>YouTube and reels</h3><p>A Hindi version of your channel, delivered fast.</p></div>
+  <div class="card rv"><span class="ic">🎓</span><h3>E-learning and courses</h3><p>Clear, trustworthy narration with correct technical terms.</p></div>
+  <div class="card rv"><span class="ic">🏢</span><h3>Corporate videos</h3><p>Training, product demos and internal communication.</p></div>
+  <div class="card rv"><span class="ic">📢</span><h3>Advertising</h3><p>TV and digital ad voice-overs that match your brand tone.</p></div>
+  <div class="card rv"><span class="ic">🎮</span><h3>Game localisation</h3><p>Full Hindi recording of dialogue, prompts and cutscenes.</p></div>
+  <div class="card rv"><span class="ic">🎧</span><h3>Audiobooks and podcasts</h3><p>Steady, fatigue-free voices for long-form narration.</p></div>
+ </div>
+</div></section>
+
+<section class="pg" id="languages" data-t="Languages – Swarsetu"><div class="w">
+ <h1>40+ languages, one Hindi</h1><p style="margin-top:12px">Pick a language and see how a line of dialogue becomes Hindi.</p>
+ <div class="chips" id="chips" role="group" aria-label="Choose a language"></div>
+ <div class="demo" aria-live="polite"><div><small style="color:var(--mu)" id="dl"></small><q id="dq"></q></div><div class="hi" id="dh"></div></div>
+ <p style="margin-top:20px">Don’t see your language? Write to us. We’ll find the right translators and language experts.</p>
+</div></section>
+
+<section class="pg" id="studio" data-t="Our Studio – Swarsetu">
+ <div class="hero"><div class="w" style="padding:70px 20px 60px"><span class="air"><i></i>RECORDING IN PROGRESS</span><h1>Inside the studio</h1><p>Three sound-treated rooms, one workflow. Here is how a scene travels from a foreign-language original to a finished Hindi track.</p><div class="vu" id="vu" aria-hidden="true"></div></div></div>
+ <div class="w">
+  <h2>The dubbing workflow</h2><p>Select a stage to see who works on it, what tools they use and how long it takes.</p>
+  <div class="wf" id="wf" role="group" aria-label="Workflow stages"></div>
+  <dl class="pnl" id="pnl" aria-live="polite"></dl>
+ </div>
+ <div class="alt"><div class="w">
+  <h2 class="rv">Our rooms</h2>
+  <div class="grid">
+   <div class="card rv rm"><span class="t">Booth A</span><h3>Lead voice booth</h3><p>Acoustically isolated, with a large-diaphragm condenser mic and a screen for picture-synced takes. Used for lead roles and narration.</p></div>
+   <div class="card rv rm"><span class="t">Booth B</span><h3>Ensemble booth</h3><p>Fits up to four actors facing one another, so group scenes and crowd reactions sound natural.</p></div>
+   <div class="card rv rm"><span class="t">Mix room</span><h3>Mix and mastering</h3><p>Calibrated monitors, 5.1 and stereo delivery, and a treated room for final loudness checks.</p></div>
+  </div>
+ </div></div>
+ <div class="w">
+  <div class="two"><div><h2 class="rv">Equipment</h2><p>Typical setup. Replace with your actual gear list.</p><ul class="gear"><li>Neumann-style large-diaphragm condenser microphones</li><li>Dual-screen video playback with timecode burn-in</li><li>Pro Tools and Nuendo workstations</li><li>Studio monitors with room correction</li><li>Talkback and cue-light system between booth and control room</li><li>Pop filters, reflection shields and vocal isolation</li><li>Secure encrypted file server for client media</li></ul></div>
+  <div><h2 class="rv">A typical recording day</h2><div class="day rv"><div><b>10:00</b><span>Director briefs the cast on scene, tone and character arcs</span></div><div><b>10:30</b><span>Warm-up and mic check; first rehearsal with the picture</span></div><div><b>11:00</b><span>Recording takes, scene by scene, with live lip-sync checks</span></div><div><b>14:00</b><span>Retakes for any line the director or client flags</span></div><div><b>16:00</b><span>Editor cleans and syncs the day’s takes</span></div><div><b>18:00</b><span>Rough cut shared with the client for notes</span></div></div></div></div>
+  <h2 style="margin-top:50px" class="rv">Who works on your project</h2>
+  <div class="grid"><div class="card rv"><h3>Producer</h3><p>Your single point of contact. Owns schedule, budget and delivery.</p></div><div class="card rv"><h3>Adaptation writer</h3><p>Turns translation into spoken, lip-sync-ready Hindi.</p></div><div class="card rv"><h3>Voice director</h3><p>Guides every performance in the booth.</p></div><div class="card rv"><h3>Sound engineer</h3><p>Records, edits, mixes and masters the final audio.</p></div></div>
+  <div class="row" style="margin-top:34px"><a class="btn" href="#contact">Book a studio tour</a><a class="btn g" href="#pricing">See pricing</a></div>
+ </div>
+</section>
+
+<section class="pg" id="process" data-t="Process – Swarsetu"><div class="w">
+ <h1>How dubbing works</h1><p style="margin-top:12px">Six steps from your first file to final delivery.</p>
+ <ol class="steps">
+  <li class="rv"><h3>Send files and brief</h3><p>Share your video, a script if you have one, and your requirements.</p></li>
+  <li class="rv"><h3>Translate and adapt</h3><p>Language experts turn the dialogue into natural Hindi that fits the lip movements.</p></li>
+  <li class="rv"><h3>Casting</h3><p>You hear 2–3 voice auditions for each main character.</p></li>
+  <li class="rv"><h3>Recording</h3><p>Studio sessions with a director guiding every take.</p></li>
+  <li class="rv"><h3>Mix and sync</h3><p>Voices, music and effects are blended with the original video.</p></li>
+  <li class="rv"><h3>Review and delivery</h3><p>We apply your feedback and deliver final files with separate tracks.</p></li>
+ </ol>
+</div></section>
+
+<section class="pg" id="work" data-t="Samples – Swarsetu"><div class="w">
+ <h1>Our samples</h1><p style="margin-top:12px">These cards are placeholders. Real audio can be added here.</p>
+ <div class="grid" id="samples"></div>
+</div></section>
+
+<section class="pg" id="pricing" data-t="Pricing – Swarsetu"><div class="w">
+ <h1>Simple, clear pricing</h1><p style="margin-top:12px">These rates are examples. The final quote depends on your project.</p>
+ <div class="grid">
+  <div class="card price rv"><h3>Creator</h3><div class="p">₹499<small> / minute</small></div><ul><li>1–2 voices</li><li>AI-assisted with human review</li><li>3-day delivery</li></ul><a class="btn g" href="#contact">Choose</a></div>
+  <div class="card price f rv"><span class="tag">Most popular</span><h3>Professional</h3><div class="p">₹1,499<small> / minute</small></div><ul><li>Full cast, studio recording</li><li>Lip-sync adaptation</li><li>Mixing and mastering</li><li>2 revision rounds</li></ul><a class="btn" href="#contact">Choose</a></div>
+  <div class="card price rv"><h3>Enterprise</h3><div class="p">Custom</div><ul><li>Series and large volumes</li><li>Dedicated producer</li><li>NDA and secure transfer</li></ul><a class="btn g" href="#contact">Talk to us</a></div>
+ </div>
+</div></section>
+
+<section class="pg" id="about" data-t="About – Swarsetu"><div class="w">
+ <h1>A bridge of voices</h1>
+ <div class="two" style="margin-top:24px"><div><p>Swarsetu started with one belief: a good story shouldn’t be stopped by a language barrier. Today our team includes translators, directors, sound engineers and over 150 voice artists.</p><p style="margin-top:14px">We listen to every project the way the audience will: does this feel like a story born in Hindi?</p></div>
+ <div class="stats" style="border:0;padding:0"><div><strong>2015</strong>Founded</div><div><strong>3</strong>Recording studios</div><div><strong>98%</strong>Client satisfaction</div></div></div>
+ <h2 style="margin-top:50px">What we value</h2>
+ <div class="grid"><div class="card rv"><h3>Emotion first</h3><p>Words change. The feeling shouldn’t.</p></div><div class="card rv"><h3>Trust</h3><p>Your content stays safe under NDA.</p></div><div class="card rv"><h3>On-time delivery</h3><p>A fixed date, no excuses.</p></div></div>
+</div></section>
+
+<section class="pg" id="contact" data-t="Contact – Swarsetu"><div class="w">
+ <h1>Let’s talk</h1>
+ <div class="two" style="margin-top:24px">
+  <div><label for="n">Your name</label><input id="n" autocomplete="name">
+  <label for="e">Email or phone</label><input id="e" autocomplete="email">
+  <label for="s">Which language to dub into Hindi?</label><select id="s"></select>
+  <label for="m">About your project</label><textarea id="m" rows="4"></textarea>
+  <p class="ok" id="ok" role="status"></p><br><button class="btn" id="send" type="button">Send request</button></div>
+  <div class="card"><h3>Studio</h3><p>Patna, Bihar, India<br>Mon–Sat, 10 am to 7 pm</p><br><h3>Email</h3><p>hello@swarsetu.example</p><br><h3>Phone</h3><p>+91 00000 00000</p></div>
+ </div>
+</div></section>
+</main>
+<footer><a href="#home">Home</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a><p>© 2026 Swarsetu Dubbing Studio. All rights reserved.</p></footer>
+
+<script>
+var L=[
+["English","How could you leave without telling me?","तुम मुझे बताए बिना कैसे चले गए?","Hello"],
+["Japanese","明日、また会おう。","कल फिर मिलेंगे।","こんにちは"],
+["Korean","괜찮아, 내가 여기 있잖아.","सब ठीक है, मैं यहीं तो हूँ।","안녕하세요"],
+["Spanish","No me dejes sola esta noche.","आज रात मुझे अकेला मत छोड़ना।","Hola"],
+["French","Le monde nous appartient.","ये दुनिया हमारी है।","Bonjour"],
+["German","Wir schaffen das zusammen.","हम ये साथ मिलकर कर लेंगे।","Guten Tag"],
+["Chinese","慢慢来,别着急。","धीरे-धीरे करो, जल्दी मत करो।","你好"],
+["Portuguese","A vida é curta, aproveite.","ज़िंदगी छोटी है, इसे जी भर जियो।","Olá"],
+["Russian","Я всегда буду ждать тебя.","मैं हमेशा तुम्हारा इंतज़ार करूँगा।","Привет"],
+["Arabic","كل شيء سيكون بخير.","सब कुछ ठीक हो जाएगा।","مرحبا"],
+["Italian","Che bella giornata!","कितना सुहाना दिन है!","Ciao"],
+["Tamil","நீ தனியாக இல்லை.","तुम अकेले नहीं हो।","வணக்கம்"]];
+var $=function(i){return document.getElementById(i)};
+var pages=document.querySelectorAll('.pg'),links=document.querySelectorAll('nav a.l');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}})},{threshold:.15});
+function route(){var h=(location.hash||'#home').slice(1);var p=$(h);if(!p||!p.classList.contains('pg')){h='home';p=$('home')}
+ pages.forEach(function(x){x.classList.toggle('on',x===p)});links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+h)});
+ document.title=p.dataset.t;window.scrollTo(0,0);p.querySelectorAll('.rv').forEach(function(e){e.classList.remove('v');io.observe(e)})}
+var bars=$('bars');for(var i=0;i<70;i++){var b=document.createElement('b');b.style.animationDelay=(i*0.06)%1.4+'s';b.style.animationDuration=(0.9+Math.abs(Math.sin(i*.7)))+'s';b.style.height=(30+Math.abs(Math.sin(i*.5))*70)+'%';bars.appendChild(b)}
+var gi=0,sw=$('sw'),sl=$('sl');
+function swap(t,l,c){sw.style.opacity=0;sw.style.transform='translateY(8px)';setTimeout(function(){sw.textContent=t;sl.textContent=l;sw.style.color=c||'';sw.style.opacity=1;sw.style.transform='none'},350)}
+setInterval(function(){var x=L[Math.floor(gi/2)%L.length];if(gi%2==0){swap(x[3],x[0],'')}else{swap('नमस्ते','Hindi','var(--ac)')}gi++},1900);
+var m='';L.concat(L).forEach(function(x){m+='<span>'+x[3]+'</span><span>•</span>'});$('mq').innerHTML=m;
+var ch=$('chips');L.forEach(function(x,i){var c=document.createElement('button');c.className='chip';c.textContent=x[0];c.setAttribute('aria-pressed',i===0);c.onclick=function(){show(i)};ch.appendChild(c)});
+function show(i){ch.querySelectorAll('.chip').forEach(function(c,j){c.setAttribute('aria-pressed',i===j)});var x=L[i];$('dl').textContent=x[0]+' to Hindi';$('dq').textContent='“'+x[1]+'”';var h=$('dh');h.textContent=x[2];h.style.animation='none';void h.offsetWidth;h.style.animation=''}
+show(0);
+L.forEach(function(x){var o=document.createElement('option');o.textContent=x[0];$('s').appendChild(o)});var o=document.createElement('option');o.textContent='Other language';$('s').appendChild(o);
+$('send').onclick=function(){var n=$('n').value.trim();var k=$('ok');k.style.display='block';k.textContent=n?('Thank you, '+n+'. We’ll get back to you within 24 hours.'):'Please enter your name first.'};
+var S=[['Anime: Demon Drift (sample)','Japanese to Hindi',9],['Web series: Night Shift','English to Hindi',14],['Documentary: Blue Planet','French to Hindi',22],['Course: Python Basics','English to Hindi',31],['K-drama: Spring Letter','Korean to Hindi',17],['Game: Dragon Realm','German to Hindi',26]];
+S.forEach(function(s){var d=document.createElement('div');d.className='card rv';var mb='';for(var i=0;i<26;i++)mb+='<b style="height:'+(25+Math.abs(Math.sin(i*s[2]))*70)+'%;animation-delay:'+(i*.05)+'s"></b>';
+ d.innerHTML='<h3>'+s[0]+'</h3><p style="margin-bottom:14px">'+s[1]+'</p><div class="play"><button class="pb" aria-label="Play">▶</button><div class="mini">'+mb+'</div></div>';
+ var bt=d.querySelector('.pb'),mi=d.querySelector('.mini');bt.onclick=function(){var on=mi.classList.toggle('go');bt.textContent=on?'❚❚':'▶';bt.setAttribute('aria-label',on?'Pause':'Play')};$('samples').appendChild(d)});
+var W=[
+['Intake and spotting','Producer + Writer','2–4 hours','Spreadsheet, timecoded script, video player','We watch the full video, mark every line with timecodes, and note tone, slang and cultural references to handle with care.'],
+['Translation and adaptation','Adaptation writer','1–3 days','CAT tools, lip-sync script template','Dialogue is translated, then rewritten so syllables and pauses match the on-screen mouth movements.'],
+['Casting','Casting director','1–2 days','Voice library, audition recorder','2–3 voice options per main character are sent to you for approval before any recording.'],
+['Recording','Voice director + Engineer','1–5 days','Booths A and B, Pro Tools','Actors perform against the picture, line by line, with the director checking emotion and sync on every take.'],
+['Editing and sync','Dialogue editor','1–2 days','Pro Tools, Nuendo','Best takes are selected, breaths and noise are cleaned, and every line is aligned to the original timing.'],
+['Mix and master','Re-recording mixer','1–2 days','Mix room, 5.1 and stereo','Hindi dialogue is blended with the original music and effects, then levelled to broadcast or OTT loudness standards.'],
+['Quality check','QC lead','Half a day','Checklist, reference playback','A native Hindi listener checks every line for errors, sync drift and audio faults before anything reaches you.'],
+['Delivery','Producer','Same day','Secure transfer','You receive the final mix, stems, a separate Hindi dialogue track and subtitle files if needed.']];
+var wf=$('wf');W.forEach(function(s,i){var c=document.createElement('button');c.className='chip';c.textContent=(i+1)+'. '+s[0];c.onclick=function(){st(i)};wf.appendChild(c)});
+function st(i){var s=W[i];wf.querySelectorAll('.chip').forEach(function(c,j){c.setAttribute('aria-pressed',i===j)});var p=$('pnl');p.style.animation='none';void p.offsetWidth;p.style.animation='';
+ p.innerHTML='<div><h3>'+s[0]+'</h3><p>'+s[4]+'</p></div><div><dt>Who</dt><dd>'+s[1]+'</dd><dt>Typical time</dt><dd>'+s[2]+'</dd><dt>Tools</dt><dd>'+s[3]+'</dd></div>'}
+st(0);
+var vu=$('vu');for(var i=0;i<18;i++){var b=document.createElement('b');b.style.animationDelay=(i*.09)%.7+'s';b.style.animationDuration=(.5+Math.abs(Math.sin(i))*.7)+'s';vu.appendChild(b)}
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
